@@ -1,0 +1,17 @@
+{
+  "name": "@authoring/react",
+  "description": "Framework for authoring React components right on the page.",
+  "version": "0.0.1",
+  "repository": "https://github.com/kevinweber/authoring",
+  "bugs": "https://github.com/kevinweber/authoring/issues",
+  "scripts": {
+    "demo": "nodemon ./demo/react/hello-koa/server.js"
+  },
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "koa": "^2.6.2",
+    "nodemon": "^1.18.7",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  }
+}
