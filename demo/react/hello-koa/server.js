@@ -1,17 +1,13 @@
-const React = require('react');
-const ReactServer = require('react-dom/server');
+import Koa from 'koa';
+import serve from 'koa-static';
+import MainPage from './window';
 
-const Koa = require('koa');
-
-const Example = require('./components/title.js');
 const app = new Koa();
 
-app.use(async function(ctx) {
-    const Body = React.createElement(Example, {
-        name: 'Koa',
-    });
+app.use(serve(__dirname + '/public'));
 
-    ctx.body = ReactServer.renderToString(Body);
+app.use(async (ctx) => {
+    ctx.body = MainPage;
 });
 
 if (!module.parent) {
