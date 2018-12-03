@@ -1,4 +1,4 @@
-import React from 'react';
+const React = require('react');
 
 const Title = (props) => {
     return React.createElement(
@@ -9,4 +9,4 @@ const Title = (props) => {
     )
 };
 
-export default Title;
+module.exports = Title;

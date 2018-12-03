@@ -1,6 +1,6 @@
-import React from 'react';
-import Title from '../components/title';
+const React = require('react');
+const Title = require('../components/title');
 
-export default React.createElement(Title, {
+module.exports = React.createElement(Title, {
     name: 'Koa',
 });
