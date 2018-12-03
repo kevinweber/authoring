@@ -17,12 +17,14 @@ if (!module.parent) {
     console.log('Demo app running: http://localhost:3000/');
 }
 
-(async () => {
+const initMetro = async () => {
     let config = await Metro.loadConfig();
 
-    Metro.runBuild(config, {
+    await Metro.buildMetro(config, {
         entry: __dirname + '/web.js',
         out: __dirname + '/public/web.bundle.js',
         platform: 'web',
     });
-})();
+};
+
+initMetro();
