@@ -12,19 +12,19 @@ app.use(async (ctx) => {
     ctx.body = MainPage;
 });
 
-if (!module.parent) {
-    app.listen(3000);
-    console.log('Demo app running: http://localhost:3000/');
-}
-
-const initMetro = async () => {
+const runBuild = async () => {
     let config = await Metro.loadConfig();
 
-    await Metro.buildMetro(config, {
+    await Metro.runBuild(config, {
         entry: __dirname + '/web.js',
         out: __dirname + '/public/web.bundle.js',
         platform: 'web',
     });
+
+    if (!module.parent) {
+        app.listen(3000);
+        console.log('Demo app running: http://localhost:3000/');
+    }
 };
 
-initMetro();
+runBuild();
